@@ -13,8 +13,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,9 +43,26 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Dialog ad = new Dialog(MainActivity.this);
+                /*Dialog ad = new Dialog(MainActivity.this);
                 ad.setContentView(R.layout.alert_dialog);
-                ad.show();
+                ad.show();*/
+
+                //ESTAMOS CREANDO UN LAYOUT SOBRE LA MARCHA
+                //////////////
+                //Creo el layout que quiero ponerle al toast
+                LinearLayout ll = new LinearLayout(MainActivity.this);
+
+                TextView tv = new TextView(MainActivity.this);
+                tv.setText("Hola hola");
+
+                ll.addView(tv);
+                ///////////////
+
+                //CREO EL TOAST Y LO SOBREESCRIBO CON EL LAYOUT
+                Toast toast = Toast.makeText(MainActivity.this, "Chao", Toast.LENGTH_LONG);
+                toast.setView(ll); //ASOCIADO EL LINEAR LAYOUT AL TOAST
+
+                toast.show();
             }
         });
     }
