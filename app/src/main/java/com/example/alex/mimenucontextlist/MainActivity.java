@@ -28,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+    /*
         ListAdapter listAdapter = new ArrayAdapter<String>(this, R.layout.fila, info);
         ListView lv = (ListView) findViewById(R.id.lista_pensadores);
 
         lv.setAdapter(listAdapter);
 
         registerForContextMenu(lv);
-
-        /*Button button = (Button) findViewById(R.id.dale);
+*/
+        Button button = (Button) findViewById(R.id.accede);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 ad.setContentView(R.layout.alert_dialog);
                 ad.show();
             }
-        });*/
+        });
     }
 
     @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+    /*
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
-
+*/
     @Override
     public void onBackPressed() {
         //CREAR MENU DE SEGURIDAD -DIALOGO
